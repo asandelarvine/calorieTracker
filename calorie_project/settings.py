@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'calories.apps.CaloriesConfig',
+    'calorie_tracker.apps.CalorieTrackerConfig',
     'django_filters'
 ]
 
