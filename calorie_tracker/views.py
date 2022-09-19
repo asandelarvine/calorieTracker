@@ -84,3 +84,72 @@ def LoginPage(request):
 def LogOutPage(request):
 	logout(request)
 	return redirect('login')
+
+#for selecting food each day
+@login_required
+def select_food(request):
+	person = Profile.objects.filter(person_of=request.user).last()
+	#for showing all food items available
+	food_items = Food.objects.filter(person_of=request.user)
+	form = SelectFoodForm(request.user,instance=person)
+
+	if request.method == 'POST':
+		form = SelectFoodForm(request.user,request.POST,instance=person)
+		if form.is_valid():
+			
+			form.save()
+			return redirect('home')
+	else:
+		form = SelectFoodForm(request.user)
+
+	context = {'form':form,'food_items':food_items}
+	return render(request, 'select_food.html',context)
+
+#for adding new food
+def add_food(request):
+	#for showing all food items available
+	food_items = Food.objects.filter(person_of=request.user)
+	form = AddFoodForm(request.POST) 
+	if request.method == 'POST':
+		form = AddFoodForm(request.POST)
+		if form.is_valid():
+			profile = form.save(commit=False)
+			profile.person_of = request.user
+			profile.save()
+			return redirect('add_food')
+	else:
+		form = AddFoodForm()
+		
+	#for filtering food
+	myFilter = FoodFilter(request.GET,queryset=food_items)
+	food_items = myFilter.qs
+	context = {'form':form,'food_items':food_items,'myFilter':myFilter}
+	return render(request,'add_food.html',context)
+
+#for updating food given by the user
+@login_required
+def update_food(request,pk):
+	food_items = Food.objects.filter(person_of=request.user)
+
+	food_item = Food.objects.get(id=pk)
+	form =  AddFoodForm(instance=food_item)
+	if request.method == 'POST':
+		form = AddFoodForm(request.POST,instance=food_item)
+		if form.is_valid():
+			form.save()
+			return redirect('profile')
+	myFilter = FoodFilter(request.GET,queryset=food_items)
+	context = {'form':form,'food_items':food_items,'myFilter':myFilter}
+
+	return render(request,'add_food.html',context)
+
+#for deleting food given by the user
+@login_required
+def delete_food(request,pk):
+	food_item = Food.objects.get(id=pk)
+	if request.method == "POST":
+		food_item.delete()
+		return redirect('profile')
+	context = {'food':food_item,}
+	return render(request,'delete_food.html',context)
+
