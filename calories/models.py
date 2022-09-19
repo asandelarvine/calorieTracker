@@ -46,4 +46,12 @@ class Profile(models.Model):
 
 	def __str__(self):
 		return str(self.person_of.username)
-        
+
+# postfood model
+class PostFood(models.Model):
+    profile = models.ForeignKey(Profile,on_delete=models.CASCADE)
+    food = models.ForeignKey(Food,on_delete=models.CASCADE)
+    calorie_amount = models.FloatField(default=0,null=True,blank=True)
+    amount = models.FloatField(default=0)
+    
+
