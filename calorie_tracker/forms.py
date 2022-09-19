@@ -24,3 +24,8 @@ class AddFoodForm(forms.ModelForm):
     class Meta:
         model = Food
         fields = ('name','quantity','calorie')
+
+class ProfileForm(forms.ModelForm):
+	class Meta:
+		model = Profile
+		fields = ('calorie_goal',)
