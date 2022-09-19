@@ -9,3 +9,12 @@ class CreateUserForm(UserCreationForm):
 	class Meta:
 		model = User
 		fields = ['username','email','password1','password2']
+
+class SelectFoodForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ('food_selected','quantity',)
+
+    def __init__(self, user, *args, **kwargs):
+        super(SelectFoodForm, self).__init__(*args, **kwargs)
+        self.fields['food_selected'].queryset = Food.objects.filter(person_of=user)
