@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from .models import Food,Profile
 
 
+
+
 class CreateUserForm(UserCreationForm):
 	class Meta:
 		model = User
@@ -19,13 +21,20 @@ class SelectFoodForm(forms.ModelForm):
         super(SelectFoodForm, self).__init__(*args, **kwargs)
         self.fields['food_selected'].queryset = Food.objects.filter(person_of=user)
 
-
 class AddFoodForm(forms.ModelForm):
     class Meta:
         model = Food
         fields = ('name','quantity','calorie')
 
+   
 class ProfileForm(forms.ModelForm):
 	class Meta:
 		model = Profile
-		fields = ('calorie_goal',)
+		fields = ('bio','profile_photo','calorie_goal')
+        
+
+
+class UpdateProfileForm(forms.ModelForm):
+	class Meta:
+		model = Profile
+		fields = ('bio', 'profile_photo')

@@ -2,15 +2,13 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import SelectFoodForm,AddFoodForm,CreateUserForm,ProfileForm
+from .forms import SelectFoodForm,AddFoodForm,CreateUserForm,ProfileForm,UpdateProfileForm
 from .models import *
 from datetime import timedelta
 from django.utils import timezone
 from datetime import date
 from datetime import datetime
 from .filters import FoodFilter
-
-# Create your views here.
 
 #home page view
 @login_required(login_url='login')
@@ -24,7 +22,9 @@ def HomePageView(request):
 	if date.today() > calories.date:
 		profile=Profile.objects.create(person_of=request.user)
 		profile.save()
+
 	calories = Profile.objects.filter(person_of=request.user).last()
+		
 	# showing all food consumed present day
 
 	all_food_today=PostFood.objects.filter(profile=calories)
@@ -119,7 +119,6 @@ def add_food(request):
 			return redirect('add_food')
 	else:
 		form = AddFoodForm()
-		
 	#for filtering food
 	myFilter = FoodFilter(request.GET,queryset=food_items)
 	food_items = myFilter.qs
@@ -153,3 +152,43 @@ def delete_food(request,pk):
 	context = {'food':food_item,}
 	return render(request,'delete_food.html',context)
 
+#profile page of user
+@login_required
+def ProfilePage(request):
+	current_user = request.user
+	#getting the lastest profile object for the user
+	person = Profile.objects.filter(user_id=current_user.id).first()
+	food_items = Food.objects.filter(person_of=request.user)
+	form = ProfileForm(instance=person)
+
+	if request.method == 'POST':
+		form = ProfileForm(request.POST,instance=person)
+		if form.is_valid():	
+			form.save()
+			return redirect('profile')
+	else:
+		form = ProfileForm(instance=person)
+
+
+
+
+	#querying all records for the last seven days 
+	some_day_last_week = timezone.now().date() -timedelta(days=7)
+	records=Profile.objects.filter(date__gte=some_day_last_week,date__lt=timezone.now().date(),person_of=request.user)
+
+	context = {'form':form,'food_items':food_items,'records':records , 'person':person }
+	return render(request, 'profile.html',context)
+
+
+@login_required(login_url='/accounts/login/')
+def update_profile(request,id):
+    user = User.objects.get(id=id)
+    person = Profile.objects.get(user_id = user)
+    form = UpdateProfileForm(instance=person)
+    if request.method == "POST":
+            form = UpdateProfileForm(request.POST,request.FILES,instance=person)
+            if form.is_valid():
+                person = form.save(commit=False)
+                person.save()
+                return redirect('profile')
+    return render(request, 'update_profile.html', {"form":form}) 
