@@ -15,14 +15,14 @@
 
 
 </head>
-<body class="" style="background-color: #1e2f23 ;">
+<body class="" style="background-color: #005248 ;">
   <a href={% url "home" %}><h1 class="logo text-center">Calorie Tracker </h1></a>
   <h1 id="username" class="text-center mt-4 headline" style="font-size:1.5vw;">Hi {{ request.user }}<sub><a href="{% url "logout" %}">&nbsp;&nbsp;<i class="fas fa-sign-out-alt text-light"></i></a></sub></h1>
 
   
 <nav id="navbar-primary" class="navbar navbar-expand-lg navbar-default active" role="navigation">
   
-    <!-- Brand and toggle get grouped for better mobile display -->
+    
  
  <div class="container">
           <div class="navbar-header">
@@ -31,7 +31,7 @@
             <span class="navbar-toggler-icon" id="ham"></span>
           </button>
         </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
+            <!--  nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="resNav">
             <ul class="navbar-nav justify-content-center">
               {% with url_name=request.resolver_match.url_name %}
