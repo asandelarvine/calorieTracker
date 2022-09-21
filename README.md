@@ -9,7 +9,7 @@ LARVINE ASANDE
 This application  tracks your weight and calculates a recommended daily calorie intake. 
 In addition, it shows your remaining recommended intake and the number of calories you’ve burned during the day.Provides a clear picture of how many calories you’ve consumed during the day.
 
-## User Story 
+## User Story / features
 * Sign in with the application to start using.
 * Set up a personal profile.
 * User can set a goal for calories consumed in a day.
@@ -23,7 +23,8 @@ In addition, it shows your remaining recommended intake and the number of calori
 https:
 
 ## Technologies Used
-
+- Visual Studio used as  the source code editor.
+- Git and Github were used as my local and online repositories respectively.
 - HTML 
 - CSS 
 - [Bootstrap](https://www.bootstrapcdn.com/)
@@ -71,39 +72,42 @@ python manage.py makemigrations calorie
 ```
 Open the application on your browser `127.0.0.1:8000`.
 
-####  Admin- 
-plp2
-
-#### Password-
-plp2@123
-
+####  Admin Dashboard
+  [Admin Dashboard Login () with credentials]
+       username : plp2
+       password : plp@123
 
 
 ## Known Bugs
 
-Incase of any concerns,ideas or queries feel free to contact us through email:
-asandelarvine@gmail.com
+  * User has to login in the Dashbord first to set up his/her profile .
+
+### Behaviour Driven Development [BDD]
+
+  * The program displays login/signup page.
+    Given: User login
+    When: Home page is displayed with it's content.
+    Then: User can change profile,add food,select food and make updates or delete.
+    Calorie calculation.
+      
+
+  * Admin site should be displayed when "admin/" url is choosen.
+    Given: An admin url
+    When: User enters admin url in browser
+    Then: Admin Login is displayed.
+
+  * User authentication occurs when Admin tries to Login
+    Given:Admin page is accessed
+    When: User tries to login
+    Then: User details are authenticated to confirm if user is an admin
+
+  * User session should end when logout url is chosen
+    Given:Logout option is given
+    When: User chooses logout option
+    Then: User session is ended
 
 
+### Support and Contact details.
+    Incase of any concerms,ideas or queries feel free to contact me through email:
+    asandelarvine@gmail.com
 
-MIT License
-
-Copyright (c) 2022 Larvine Moraa
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
