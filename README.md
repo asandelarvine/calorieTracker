@@ -1,17 +1,12 @@
 # CalorieTracker
 
-#### Latest version updated on:January 14th 2022
+#### Latest version updated on:Wednesday, September 21, 2022
 #### By :
-CLARA METTO,
-IAN OCHENGE,
-DAVID MATHAGA,
-MESHACK KIMUTAI
-BRENDA KANALE and
+
 LARVINE ASANDE
 
 ## Description
-This application  tracks your weight and calculates a recommended daily calorie intake. It also has a well-designed food diary and an exercise log.
-day. 
+This application  tracks your weight and calculates a recommended daily calorie intake. 
 In addition, it shows your remaining recommended intake and the number of calories you’ve burned during the day.Provides a clear picture of how many calories you’ve consumed during the day.
 
 ## User Story 
@@ -25,7 +20,7 @@ In addition, it shows your remaining recommended intake and the number of calori
 * User can select on food consumed to get a summary of food consumed in that day.
 
 ##  Live Link 
-https://calorieapp22.herokuapp.com/
+https:
 
 ## Technologies Used
 
@@ -34,12 +29,12 @@ https://calorieapp22.herokuapp.com/
 - [Bootstrap](https://www.bootstrapcdn.com/)
 - [Python3.8](https://www.python.org/)
 - [Django==3.2.7](https://docs.djangoproject.com/en/2.2/)
-- [Heroku](https://heroku.com)
+
 
 ## Setup and Installation 
 ##### Clone the repository: 
  ```bash
-https://github.com/clarametto/calorieTracker.git
+https://github.com/asandelarvine/calorieTracker
 ```
 ##### Navigate into the folder and install requirements 
  ```bash
@@ -77,25 +72,23 @@ python manage.py makemigrations calorie
 Open the application on your browser `127.0.0.1:8000`.
 
 ####  Admin- 
+plp2
 
 #### Password-
+plp2@123
 
 
 
 ## Known Bugs
 
 Incase of any concerns,ideas or queries feel free to contact us through email:
-clara.metto@student.moringaschool.com,
-ian.ochenge@student.moringaschool.com, 
-david.mathaga@student.moringaschool.com,
-brenda.kanale@student.moringaschool.com,
-meshack.kimutai@student.moringaschool.com.
+asandelarvine@gmail.com
 
 
 
 MIT License
 
-Copyright (c) 2022 Claire Metto, larvine Asande, Ian Ochenge, David Mathaga, Brenda Kanale, Meshack Kimutai
+Copyright (c) 2022 Larvine Moraa
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
