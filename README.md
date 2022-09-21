@@ -111,6 +111,8 @@ Open the application on your browser `127.0.0.1:8000`.
 
 
 ### Support and Contact details.
+
     Incase of any concerms,ideas or queries feel free to contact me through email:
+    
     asandelarvine@gmail.com
 
