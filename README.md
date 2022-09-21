@@ -73,8 +73,11 @@ python manage.py makemigrations calorie
 Open the application on your browser `127.0.0.1:8000`.
 
 ####  Admin Dashboard
+
   [Admin Dashboard Login () with credentials]
+  
        username : plp2
+       
        password : plp@123
 
 
