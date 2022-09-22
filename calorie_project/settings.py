@@ -19,6 +19,10 @@ from decouple import config,Csv
 import cloudinary.uploader
 import cloudinary.api
 
+MODE=config("MODE", default="dev")
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = os.environ.get('DEBUG', True)
+
 # cloudinary
 cloudinary.config(
     cloud_name = config('CD_NAME'),
