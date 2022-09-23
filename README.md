@@ -30,7 +30,7 @@ https://calorie-app2022.herokuapp.com/
 - [Bootstrap](https://www.bootstrapcdn.com/)
 - [Python3.8](https://www.python.org/)
 - [Django==3.2.7](https://docs.djangoproject.com/en/2.2/)
-
+- Heroku (deployment)
 
 ## Setup and Installation 
 ##### Clone the repository: 
