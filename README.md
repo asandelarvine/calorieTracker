@@ -1,6 +1,6 @@
 # CalorieTracker
 
-#### Latest version updated on:Wednesday, September 21, 2022
+#### Latest version updated on:Friday, September 23, 2022
 #### By :
 
 LARVINE ASANDE
@@ -82,7 +82,7 @@ Open the application on your browser `127.0.0.1:8000`.
 
 
 ## Known Bugs
-
+.
   * User has to login in the Dashbord first to set up his/her profile .
 
 ### Behaviour Driven Development [BDD]
