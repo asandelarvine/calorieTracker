@@ -1,4 +1,4 @@
-Hi# CalorieTracker
+# CalorieTracker
 
 #### Latest version updated on:Wednesday, September 21, 2022
 #### By :
