@@ -78,7 +78,7 @@ Open the application on your browser `127.0.0.1:8000`.
   
        username : plp2
        
-       password : plp@123
+       password : plp2@123
 
 
 ## Known Bugs
